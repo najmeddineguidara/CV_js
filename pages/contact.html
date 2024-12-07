@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            margin: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3F51B5;
+        }
+
+        /* Form styles */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea,
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .contact-form select {
+            background-color: #fff;
+        }
+
+        .contact-form button {
+            background-color: #3F51B5;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: #2C3E94;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3F51B5;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        footer ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer ul li {
+            list-style: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        footer ul li i {
+            font-size: 1.5em;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: lightgray;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #0056b3;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+
+        .profile-picture img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-chevron-left"></i> Retour
+        </button>
+        <h1 class="title">Contactez-moi</h1>
+        <div class="profile-picture">
+            <img src="../images/image.png" alt="Photo de profil" />
+        </div>
+    </div>
+    <main>
+        <form class="contact-form" action="mailto:najmeddineguidara71@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Votre adresse email" required>
+
+            <label for="type">Type de demande :</label>
+            <select id="type" name="type" required>
+                <option value="">-- Sélectionnez une option --</option>
+                <option value="collaboration">Collaboration</option>
+                <option value="recrutement">Recrutement</option>
+                <option value="feedback">Feedback</option>
+                <option value="autre">Autre</option>
+            </select>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" placeholder="Décrivez votre demande" required></textarea>
+
+            <button type="submit">Envoyer</button>
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li>
+                <a href="../index.html" class="footer-link">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="../pages/competence.html" class="footer-link">
+                    <i class="fas fa-star"></i> Compétences
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Formation.html" class="footer-link">
+                    <i class="fas fa-graduation-cap"></i> Formation
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Expérience.html" class="footer-link">
+                    <i class="fas fa-briefcase"></i> Expérience
+                </a>
+            </li>
+            <li>
+                <a href="../Portfolio.html" class="footer-link">
+                    <i class="fas fa-folder-open"></i> Portfolio
+                </a>
+            </li>
+            <!-- Added Contact Link -->
+            <li>
+                <a href="../pages/contact.html" class="footer-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </li>
+            <!-- Added Quiz Link -->
+            <li>
+                <a href="../pages/quiz.html" class="footer-link">
+                    <i class="fas fa-question-circle"></i> Quiz
+                </a>
+            </li>
+            <!-- Added IIT Testimonial Link -->
+            <li>
+                <a href="../pages/temoignage-iit.html" class="footer-link">
+                    <i class="fas fa-comments"></i> Témoignage IIT
+                </a>
+            </li>
+        </ul>
+    </footer>
+    <script>
+        function goBack() {
+            if (confirm("Voulez-vous vraiment revenir à la page précédente ?")) {
+                window.history.back();
+            }
+        }
+    </script>
+</body>
+
+</html>

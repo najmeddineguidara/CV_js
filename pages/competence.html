@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #0056b3;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background-color: #003f8a;
+            transform: translateY(-2px);
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+
+        .profile-picture img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* Main Content */
+        .container {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+
+        .card h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar-container {
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            height: 10px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #007bff;
+        }
+
+        .percentage {
+            font-size: 0.9rem;
+            color: #555;
+            text-align: right;
+        }
+
+        /* Footer */
+
+        footer {
+            background-color: #3F51B5;
+            padding: 15px 0;
+            margin-top: auto;
+            /* Assure que le footer reste en bas */
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        ul li i {
+            font-size: 1.5em;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-chevron-left"></i> Retour
+        </button>
+        <h1 class="title">VOILA MES COMPÉTENCES</h1>
+        <div class="profile-picture">
+            <img src="../images/image.png" alt="Photo de profil" />
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Progress items -->
+        <div class="card">
+            <h3>HTML</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 80%;"></div>
+            </div>
+            <span class="percentage">80%</span>
+        </div>
+
+        <div class="card">
+            <h3>CSS</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <span class="percentage">75%</span>
+        </div>
+
+        <div class="card">
+            <h3>JavaScript</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 50%;"></div>
+            </div>
+            <span class="percentage">50%</span>
+        </div>
+
+        <div class="card">
+            <h3>Php, Laravel, Mysql</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <span class="percentage">75%</span>
+        </div>
+
+        <div class="card">
+            <h3>Bootstrap</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 75%;"></div>
+            </div>
+            <span class="percentage">75%</span>
+        </div>
+
+        <div class="card">
+            <h3>React js, Next js, Node js, Angular</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 65%;"></div>
+            </div>
+            <span class="percentage">65%</span>
+        </div>
+
+        <div class="card">
+            <h3>Python, Django, Asp.net</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+            <span class="percentage">70%</span>
+        </div>
+
+        <div class="card">
+            <h3>Java, C, C#, JEE</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 55%;"></div>
+            </div>
+            <span class="percentage">55%</span>
+        </div>
+
+        <div class="card">
+            <h3>Flutter, Mobile native</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 55%;"></div>
+            </div>
+            <span class="percentage">55%</span>
+        </div>
+
+        <div class="card">
+            <h3>Arabe</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+            <span class="percentage">100%</span>
+        </div>
+
+        <div class="card">
+            <h3>Français</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 95%;"></div>
+            </div>
+            <span class="percentage">95%</span>
+        </div>
+
+        <div class="card">
+            <h3>Anglais</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar" style="width: 70%;"></div>
+            </div>
+            <span class="percentage">70%</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <ul>
+            <li>
+                <a href="../index.html" class="footer-link">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="../pages/competence.html" class="footer-link">
+                    <i class="fas fa-star"></i> Compétences
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Formation.html" class="footer-link">
+                    <i class="fas fa-graduation-cap"></i> Formation
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Expérience.html" class="footer-link">
+                    <i class="fas fa-briefcase"></i> Expérience
+                </a>
+            </li>
+            <li>
+                <a href="../Portfolio.html" class="footer-link">
+                    <i class="fas fa-folder-open"></i> Portfolio
+                </a>
+            </li>
+            <!-- Added Contact Link -->
+            <li>
+                <a href="../pages/contact.html" class="footer-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </li>
+            <!-- Added Quiz Link -->
+            <li>
+                <a href="../pages/quiz.html" class="footer-link">
+                    <i class="fas fa-question-circle"></i> Quiz
+                </a>
+            </li>
+            <!-- Added IIT Testimonial Link -->
+            <li>
+                <a href="../pages/temoignage-iit.html" class="footer-link">
+                    <i class="fas fa-comments"></i> Témoignage IIT
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+    <!-- Script -->
+    <script>
+        function goBack() {
+            if (confirm("Voulez-vous vraiment revenir à la page précédente ?")) {
+                window.history.back();
+            }
+        }
+    </script>
+</body>
+
+</html>

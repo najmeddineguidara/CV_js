@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset and Body Style */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #007bff;
+            border-radius: 50px;
+            padding: 10px 20px;
+            color: white;
+        }
+
+        .back-button {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #0056b3;
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+            font-size: 1rem;
+        }
+
+        .back-button:hover {
+            background-color: #003f8a;
+            transform: translateY(-2px);
+        }
+
+        .title {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            color: white;
+        }
+
+        .profile-picture img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin: 50px auto;
+            padding: 20px 0;
+            max-width: 900px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #007bff;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item .content {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .content {
+            text-align: right;
+        }
+
+        .timeline-item .content img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item .content h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item .content p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .timeline-item .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #007bff;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item:nth-child(odd) .icon {
+            background-color: #28a745;
+        }
+
+        .timeline-item:nth-child(even) .icon {
+            background-color: #dc3545;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-item .content {
+                width: 90%;
+                text-align: center;
+            }
+
+            .timeline-item:nth-child(odd) .content {
+                text-align: center;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item .icon {
+                left: 20px;
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3F51B5;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            list-style: none;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        ul li i {
+            font-size: 1.5em;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-link:hover {
+            color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header">
+        <button class="back-button" onclick="goBack()">
+            <i class="fas fa-chevron-left"></i> Retour
+        </button>
+        <h1 class="title">VOILA MES FORMATIONS</h1>
+        <div class="profile-picture">
+            <img src="../images/image.png" alt="Photo de profil" />
+        </div>
+    </div>
+
+    <!-- Timeline Section -->
+    <div class="timeline">
+        <!-- Item 1 -->
+        <div class="timeline-item">
+            <div class="content">
+                <img src="../images/iset.jpg" alt="Licence DSI">
+                <h3>2021-2024</h3>
+                <p>Licence en Développement des Systèmes d'Information (DSI)</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-school"></i>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+            <div class="content">
+                <img src="../images/anglais.jpg" alt="Certificate of completion">
+                <h3>05-07-23 / 22-08-23</h3>
+                <p>Certificate of completion General English</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-certificate"></i>
+            </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item">
+            <div class="content">
+                <img src="../images/nmtc.png" alt="NMTC">
+                <h3>19-03-23 / 21-03-23</h3>
+                <p>Certificat de la session de formation NMTC - Révolution Web 3.0</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="timeline-item">
+            <div class="content">
+                <img src="../images/bac.jpg" alt="Baccalauréat">
+                <h3>2020 - 2021</h3>
+                <p>Baccalauréat Technique</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li>
+                <a href="../index.html" class="footer-link">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="../pages/competence.html" class="footer-link">
+                    <i class="fas fa-star"></i> Compétences
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Formation.html" class="footer-link">
+                    <i class="fas fa-graduation-cap"></i> Formation
+                </a>
+            </li>
+            <li>
+                <a href="../pages/Expérience.html" class="footer-link">
+                    <i class="fas fa-briefcase"></i> Expérience
+                </a>
+            </li>
+            <li>
+                <a href="../Portfolio.html" class="footer-link">
+                    <i class="fas fa-folder-open"></i> Portfolio
+                </a>
+            </li>
+            <!-- Added Contact Link -->
+            <li>
+                <a href="../pages/contact.html" class="footer-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </li>
+            <!-- Added Quiz Link -->
+            <li>
+                <a href="../pages/quiz.html" class="footer-link">
+                    <i class="fas fa-question-circle"></i> Quiz
+                </a>
+            </li>
+            <!-- Added IIT Testimonial Link -->
+            <li>
+                <a href="../pages/temoignage-iit.html" class="footer-link">
+                    <i class="fas fa-comments"></i> Témoignage IIT
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+</body>
+<!-- Script -->
+<script>
+    function goBack() {
+        if (confirm("Voulez-vous vraiment revenir à la page précédente ?")) {
+            window.history.back();
+        }
+    }
+</script>
+
+</html>

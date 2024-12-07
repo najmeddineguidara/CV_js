@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Font Awesome pour les icônes -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>Portfolio</title>
+  <style>
+    /* Styles globaux */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      background-color: #007bff;
+      border-radius: 50px;
+      padding: 10px 20px;
+      color: white;
+    }
+
+    .back-button {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #0056b3;
+      padding: 8px 16px;
+      border-radius: 50px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .back-button i {
+      margin-right: 8px;
+      font-size: 1rem;
+    }
+
+
+
+    .title {
+      flex-grow: 1;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+      color: white;
+    }
+
+    .profile-picture img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid white;
+    }
+
+    .portfolio {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .projects-list {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      /*taht ib3dhom*/
+    }
+
+    .project-card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 400px;
+      cursor: pointer;
+      transition: transform 0.8s ease;
+    }
+
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .project-info {
+      padding: 10px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 130%;
+      height: 120%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 100%;
+      height: 95%;
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    video {
+      width: 100%;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    /* Configuration pour coller le footer en bas */
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    footer {
+      background-color: #3F51B5;
+      padding: 10px 0;
+      margin-top: auto;
+      /* Assure que le footer reste en bas */
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-around;
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      list-style: none;
+      color: white;
+      cursor: pointer;
+      font-size: 1.2em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    ul li i {
+      font-size: 1.5em;
+    }
+
+    .footer-link {
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      color: lightgray;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <div class="header">
+    <button class="back-button" onclick="goBack()">
+      <i class="fas fa-chevron-left"></i> Retour
+    </button>
+    <h1 class="title">liste de projets</h1>
+    <div class="profile-picture">
+      <img src="images/image.png" Photo de profil" />
+    </div>
+  </div>
+  <div class="portfolio">
+    <div class="projects-list">
+      <div class="project-card" onclick="openProject(0)">
+        <img src="https://www.webskittersacademy.in/wp-content/uploads/2015/08/PHP.jpg?w=500" alt="PHP">
+        <div class="project-info">
+          <h3>Projet avec PHP</h3>
+        </div>
+      </div>
+      <div class="project-card" onclick="openProject(1)">
+        <img src="https://miro.medium.com/v2/resize:fit:1400/1*bMgQ8MhbnQexpqHgIgBJPA.png" alt="Angular">
+        <div class="project-info">
+          <h3>Projet avec Angular</h3>
+        </div>
+      </div>
+      <div class="project-card" onclick="openProject(2)">
+        <img src="https://blog.cellenza.com/wp-content/uploads/2015/05/React-JS.png" alt="React">
+        <div class="project-info">
+          <h3>Projet avec React</h3>
+        </div>
+      </div>
+      <div class="project-card" onclick="openProject(2)">
+        <img src="https://blog.cellenza.com/wp-content/uploads/2015/05/React-JS.png" alt="React">
+        <div class="project-info">
+          <h3>Projet avec React</h3>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <div id="project-details">
+        <!-- Les détails du projet seront injectés ici -->
+      </div>
+    </div>
+  </div>
+  <footer>
+    <ul>
+      <li>
+        <a href="index.html" class="footer-link">
+          <i class="fas fa-user"></i> Profile
+        </a>
+      </li>
+      <li>
+        <a href="pages/competence.html" class="footer-link">
+          <i class="fas fa-star"></i> Compétences
+        </a>
+      </li>
+      <li>
+        <a href="pages/Formation.html" class="footer-link">
+          <i class="fas fa-graduation-cap"></i> Formation
+        </a>
+      </li>
+      <li>
+        <a href="pages/Expérience.html" class="footer-link">
+          <i class="fas fa-briefcase"></i> Expérience
+        </a>
+      </li>
+      <li>
+        <a href="#" class="footer-link">
+          <i class="fas fa-folder-open"></i> Portfolio
+        </a>
+      </li>
+      <!-- Added Contact Link -->
+      <li>
+        <a href="pages/contact.html" class="footer-link">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </li>
+      <!-- Added Quiz Link -->
+      <li>
+        <a href="pages/quiz.html" class="footer-link">
+          <i class="fas fa-question-circle"></i> Quiz
+        </a>
+      </li>
+      <!-- Added IIT Testimonial Link -->
+      <li>
+        <a href="pages/temoignage-iit.html" class="footer-link">
+          <i class="fas fa-comments"></i> Témoignage IIT
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <script>
+    const projects = [
+      {
+        img: "https://www.webskittersacademy.in/wp-content/uploads/2015/08/PHP.jpg?w=500",
+        name: "Php",
+        desc: "Nous entreprenons la création d'un site de commerce en ligne robuste et convivial en utilisant Php...",
+        video: "video/2.mp4"
+      },
+      {
+        img: "https://miro.medium.com/v2/resize:fit:1400/1*bMgQ8MhbnQexpqHgIgBJPA.png",
+        name: "Angular",
+        desc: "Nous entreprenons la création d'un site de commerce en ligne robuste et convivial en utilisant Angular...",
+        video: "video/1.mp4"
+      },
+      {
+        img: "https://blog.cellenza.com/wp-content/uploads/2015/05/React-JS.png",
+        name: "React",
+        desc: "Nous entreprenons la création d'une plateforme de videoconference en utilisant react...",
+        video: "video/final.mp4"
+      }
+
+    ];
+
+
+
+    function openProject(index) {
+      const project = projects[index];
+      const modal = document.getElementById("project-modal");
+      const projectDetails = document.getElementById("project-details");
+
+      projectDetails.innerHTML = `
+        <img src="${project.img}" alt="${project.name}" style="width: 70%; border-radius: 8px; display: block; margin-left: auto; margin-right: auto;">
+
+        <h2>${project.name}</h2>
+        <p>${project.desc}</p>
+        <video controls>
+          <source src="${project.video}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      `;
+
+      modal.style.display = "flex";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("project-modal");
+      modal.style.display = "none";
+    }
+
+    function goBack() {
+      if (confirm("Voulez-vous vraiment revenir à la page précédente ?")) {
+        window.history.back();
+      }
+    }
+
+  </script>
+</body>
+
+</html>

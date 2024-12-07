@@ -1,0 +1,226 @@
+/* Global Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex; /* Ajouté pour structurer verticalement */
+    flex-direction: column;
+    height: 100vh; /* Prend toute la hauteur de la fenêtre */
+    margin: 0; /* Supprime les marges par défaut */
+    background-color: #f9f9f9;
+}
+
+
+ /* Header */
+ .header {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    color: white;
+}
+
+.title {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0;
+    color: white;
+}
+
+.profile-picture img {
+    width: 70px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+#download-button img {
+    width: 30px;
+    height: 30px;
+}
+
+main {
+    flex: 1; /* Permet à `main` de s'étendre entre le header et le footer */
+    display: flex; /* Active le système de mise en page flexible */
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    padding: 20px; /* Ajoute un espace intérieur */
+}
+
+
+.nom {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.nom h2 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
+
+.etude {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.etude h3 {
+    font-size: 18px;
+    color: #555;
+    font-style: italic;
+}
+
+
+
+
+
+
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+/* About Me Section */
+.about-me-box {
+    border: 2px solid #3F51B5;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto; /* Center the box */
+}
+
+h2 {
+    color: #3F51B5;
+    text-align: center;
+    margin-bottom: 15px;
+    text-transform: uppercase; /* Optional: Capitalize the title */
+    font-weight: bold;
+    margin-top: -7px;
+   
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre l'image et le contenu */
+    gap: 2px; /* Espacement entre l'image et la boîte */
+}
+
+
+.about-me-content {
+    margin-top: 15px;
+}
+
+.about-me-content p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: justify; /* Optional: Justify the text */
+}
+
+
+.profile-image-circle {
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+    align-items: center;    /* Centre l'image verticalement */
+    width: 150px;           /* Largeur du cercle */
+    height: 150px;          /* Hauteur du cercle */
+    border-radius: 50%;     /* Forme circulaire parfaite */
+    overflow: hidden;       /* Coupe l'image qui dépasse du cercle */
+    background-color: #ddd; /* Couleur de fond optionnelle */
+}
+
+.profile-image-circle img {
+    width: 100%;           /* L'image occupe tout l'espace du cercle */
+    height: 100%;          /* Maintenir le ratio */
+    object-fit: cover;     /* Ajuste l'image pour remplir le cercle sans distorsion */
+}
+
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.social-links a {
+    font-size: 1.8em;
+    color: #3F51B5;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #1e88e5; /* Hover color */
+}
+
+/* Footer */
+footer {
+    background-color: #3F51B5;
+    padding: 10px 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer ul li {
+    list-style: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+footer ul li i {
+    font-size: 1.5em; /* Icon size */
+}
+
+.footer-link {
+    color: white; /* White text */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-link:hover {
+    color: lightgray; /* Hover color */
+}
+.icon-list {
+    list-style: none;
+    margin: 15px 0;
+    padding: 0;
+    font-size: 1em;
+    color: #333;
+    
+    
+}
+
+.icon-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centre horizontalement */
+}
+
+.icon-list i {
+    color: #0047FF;
+    margin-right: 10px;
+    font-size: 1.2em;
+}

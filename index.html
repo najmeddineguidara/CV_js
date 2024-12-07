@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio weld guidara</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome pour les icônes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="title">Bienvenue sur mon Portfolio</h1>
+        <button onclick="downloadCV()" id="download-button">
+            <img src="images/telecharger.png" alt="Télécharger le CV" width="30" height="30">
+        </button>
+    </div>
+
+
+    <main id="content">
+        <section id="profile" class="active">
+            <div class="profile-container">
+                <div class="profile-image-circle">
+                    <img src="images/image.png" alt="Profile Picture">
+                </div>
+                <div class="nom">
+                    <h2>Guidara Najmeddine</h2>
+                </div>
+                <div class="etude">
+                    <h3> Technicien superieur de développement de systèmes d'informatique </h3>
+                </div>
+                <div class="about-me-box">
+                    <h2>À propos de moi</h2>
+                    <div class="about-me-content">
+                        <p>
+                            Bonjour, je suis Najmeddine Guidara, un Technicien diplômé en développement des systèmes
+                            d'information. Passionné par la création de solutions logicielles efficaces et innovantes,
+                            Toujours motivé pour relever de nouveaux défis, je suis à la recherche d'un stage de fin
+                            d'études pour approfondir mes compétences techniques et contribuer au succès d'une équipe.
+                        </p>
+
+                        <h2>Mes centres d'intérêt </h2>
+                        <ul class="icon-list">
+                            <li><i class="fa fa-database"></i> Big Data et analyse des données</li>
+
+                            <li><i class="fa fa-mobile-alt"></i> Développement mobile</li>
+
+                            <li><i class="fa fa-dumbbell"></i> Sport et bien-être</li>
+
+                        </ul>
+
+                        <div class="social-links">
+                            <a href="https://github.com/najmeddineguidara" target="_blank" class="social-icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/najmeddine-guidara/" target="_blank"
+                                class="social-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://wa.me/21658069706" target="_blank" class="social-icon">
+                                <i class="fas fa-globe"></i>
+                            </a>
+                            <a href="mailto:najmeddineguidara71@gmail.com" target="_blank" class="social-icon">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="https://maps.google.com?q=Votre+Adresse" target="_blank" class="social-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </a>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ul>
+            <li>
+                <a href="#" class="footer-link">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+            </li>
+            <li>
+                <a href="pages/competence.html" class="footer-link">
+                    <i class="fas fa-star"></i> Compétences
+                </a>
+            </li>
+            <li>
+                <a href="pages/Formation.html" class="footer-link">
+                    <i class="fas fa-graduation-cap"></i> Formation
+                </a>
+            </li>
+            <li>
+                <a href="pages/Expérience.html" class="footer-link">
+                    <i class="fas fa-briefcase"></i> Expérience
+                </a>
+            </li>
+            <li>
+                <a href="Portfolio.html" class="footer-link">
+                    <i class="fas fa-folder-open"></i> Portfolio
+                </a>
+            </li>
+            <!-- Added Contact Link -->
+            <li>
+                <a href="pages/contact.html" class="footer-link">
+                    <i class="fas fa-envelope"></i> Contact
+                </a>
+            </li>
+            <!-- Added Quiz Link -->
+            <li>
+                <a href="pages/quiz.html" class="footer-link">
+                    <i class="fas fa-question-circle"></i> Quiz
+                </a>
+            </li>
+            <!-- Added IIT Testimonial Link -->
+            <li>
+                <a href="pages/temoignage-iit.html" class="footer-link">
+                    <i class="fas fa-comments"></i> Témoignage IIT
+                </a>
+            </li>
+        </ul>
+    </footer>
+
+
+
+    <script>
+        function downloadCV() {
+            const cvLink = "https://drive.google.com/uc?export=download&id=1sM6jrtXCvzM5QQTGtuNA4PBF9Y89jIgs"; // Lien direct de téléchargement
+            const a = document.createElement("a");
+            a.href = cvLink;
+            a.download = "CV.pdf"; // Le nom sous lequel le fichier sera téléchargé
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+
+
+    </script>
+
+</body>
+
+</html>
