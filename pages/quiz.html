@@ -177,8 +177,6 @@
 
         #quizForm {
             margin-left: 4pc
-                
-
         }
     </style>
 </head>
@@ -305,7 +303,7 @@
     <div class="correct-answers" id="correctAnswers"></div>
     </div>
 
-    
+
 
     <!-- Footer Section -->
     <footer>
@@ -356,55 +354,53 @@
         </ul>
     </footer>
     <script>
-         
-    // Fonction qui calcule le score du quiz
-    function calculateScore() {
-        // Définit les réponses correctes pour chaque question
-        const correctAnswers = {
-            q1: "b",
-            q2: "b",
-            q3: "b",
-            q4: "a",
-            q5: "a",
-            q6: "b",
-            q7: "a",
-            q8: "a",
-            q9: "b",
-            q10: "a"
-        };
 
-        // Variable pour stocker le score
-        let score = 0;
-        // Le nombre total de questions
-        const totalQuestions = Object.keys(correctAnswers).length;
-        
-        // Récupère l'élément où afficher les réponses correctes
-        const correctAnswersList = document.getElementById("correctAnswers");
-        // Récupère l'élément où afficher le score
-        const resultDiv = document.getElementById("result");
-        // Récupère le formulaire du quiz
-        const form = document.getElementById("quizForm");
+        function calculateScore() {
+            // Définit les réponses correctes pour chaque question
+            const correctAnswers = {
+                q1: "b",
+                q2: "b",
+                q3: "b",
+                q4: "a",
+                q5: "a",
+                q6: "b",
+                q7: "a",
+                q8: "a",
+                q9: "b",
+                q10: "a"
+            };
 
-        // Affiche l'introduction des réponses correctes
-        correctAnswersList.innerHTML = "<p>Réponses correctes :</p>";
+            let score = 0;
+            // Le nombre total de questions
+            const totalQuestions = Object.keys(correctAnswers).length;
 
-        // Vérifie chaque réponse de l'utilisateur et compare avec la bonne réponse
-        Object.keys(correctAnswers).forEach((key, index) => {
-            const userAnswer = form.elements[key].value; // Réponse donnée par l'utilisateur
-            if (userAnswer === correctAnswers[key]) {
-                score++; // Si la réponse est correcte, augmente le score
-            }
-            // Affiche la bonne réponse dans la liste
-            correctAnswersList.innerHTML += `<p>${index + 1}. ${correctAnswers[key]}</p>`;
-        });
 
-        // Affiche le résultat du score et rend la section visible
-        resultDiv.style.display = "block";
-        resultDiv.innerText = `Votre score : ${score}/${totalQuestions}`;
-        
-        // Affiche la liste des réponses correctes
-        correctAnswersList.style.display = "block";
-    }
+            const correctAnswersList = document.getElementById("correctAnswers");
+
+            const resultDiv = document.getElementById("result");
+
+            const form = document.getElementById("quizForm");
+
+
+            correctAnswersList.innerHTML = "<p>Réponses correctes :</p>";
+
+
+            Object.keys(correctAnswers).forEach((key, index) => {
+                const userAnswer = form.elements[key].value; // Réponse donnée par l'utilisateur
+                if (userAnswer === correctAnswers[key]) {
+                    score++; // Si la réponse est correcte, augmente le score
+                }
+
+                correctAnswersList.innerText += `<p>${index + 1}. ${correctAnswers[key]}</p>`;
+            });
+
+
+            resultDiv.style.display = "block";
+            resultDiv.innerText = `Votre score : ${score}/${totalQuestions}`;
+
+
+            correctAnswersList.style.display = "block";
+        }
 
 
         function goBack() {
